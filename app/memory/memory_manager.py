@@ -1,32 +1,3 @@
-# # app/memory/memory_manager.py
-# from datetime import datetime
-# from app.memory.redis_client import RedisClient
-
-# class MemoryManager:
-#     def __init__(self):
-#         self.redis = RedisClient()
-    
-#     def create_entry(self, source: str, format: str, intent: str) -> str:
-#         conv_id = self.redis.create_conversation_id(source)
-#         data = {
-#             "source": source,
-#             "format": format,
-#             "intent": intent,
-#             "timestamp": str(datetime.utcnow()),
-#             "extracted_fields": "{}"
-#         }
-#         self.redis.store(conv_id, data)
-#         return conv_id
-    
-#     def update_entry(self, conv_id: str, **kwargs):
-#         existing = self.redis.retrieve(conv_id)
-#         existing.update(kwargs)
-#         self.redis.store(conv_id, existing)
-    
-#     def get_entry(self, conv_id: str) -> dict:
-#         return self.redis.retrieve(conv_id)
-
-# app/memory/memory_manager.py
 import json
 from datetime import datetime
 from .redis_client import RedisClient

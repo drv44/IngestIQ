@@ -1,4 +1,3 @@
-# app/agents/json_agent.py
 import json
 from pydantic import BaseModel
 from ..memory.memory_manager import MemoryManager
@@ -6,12 +5,14 @@ from ..memory.memory_manager import MemoryManager
 class TargetSchema(BaseModel):
     invoice_id: str = None
     amount: float = None
-    # Add other fields as needed
+    date: str = None
+    currency: str = None
+    vendor: str = None
 
 class JSONAgent:
     def __init__(self, memory: MemoryManager):
         self.memory = memory
-        self.required_fields = ["invoice_id", "amount", "date"]
+        self.required_fields = ["invoice_id", "amount", "date", "currency", "vendor"]
         self.context = None
     
     def set_context(self, conv_id: str):

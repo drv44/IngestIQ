@@ -1,29 +1,3 @@
-# # app/memory/redis_client.py
-# import redis
-# import json
-# from dotenv import load_dotenv
-# import time
-# import os
-
-# load_dotenv()
-
-# class RedisClient:
-#     def __init__(self):
-#         self.client = redis.Redis.from_url(
-#             os.getenv("REDIS_URL", "redis://localhost:6379"),
-#             decode_responses=True
-#         )
-    
-#     def store(self, key: str, data: dict):
-#         self.client.hset(key, mapping=data)
-    
-#     def retrieve(self, key: str) -> dict:
-#         return self.client.hgetall(key)
-    
-#     def create_conversation_id(self, source: str) -> str:
-#         return f"conv_{source[:8]}_{int(time.time())}"
-
-# app/memory/redis_client.py
 import redis
 import time
 import os

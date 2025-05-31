@@ -1,4 +1,4 @@
-# Multi-Agent Document Processing System
+# IngestIQ : Multi-Agent Document Processing System
 
 A combined FastAPI backend and React frontend that allows users to upload documents (PDF, JSON, or Email), classifies them via Google Gemini, extracts relevant fields, and stores conversation memory in Redis.
 
