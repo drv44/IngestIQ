@@ -262,6 +262,16 @@ multi-agent-system/
 
 ---
 
+## 📷 Preview
+
+![App Screenshot](/docs/images/homepage.png)
+![App Screenshot](/docs/images/fileUpload.png)
+![App Screenshot](/docs/images/email_output.png)
+![App Screenshot](/docs/images/json_output.png)
+![App Screenshot](/docs/images/pdf_output.png)
+
+---
+
 ## 🤝 Contributing
 
 1. Fork this repository.
