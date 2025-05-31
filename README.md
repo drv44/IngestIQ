@@ -3,6 +3,13 @@
 A combined FastAPI backend and React frontend that allows users to upload documents (PDF, JSON, or Email), classifies them via Google Gemini, extracts relevant fields, and stores conversation memory in Redis.
 
 ---
+## Demo Video
+
+Click the link below to view a 2-minute walkthrough hosted on Google Drive:
+
+[▶️ Watch Demo on Google Drive](https://drive.google.com/file/d/1qcS2te0pQ4DuBQ1UlF7_lLcDiDpGKUrv/view?usp=sharing)
+
+---
 
 ## 📌 Features
 
