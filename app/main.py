@@ -1,6 +1,7 @@
 # app/main.py
 import io
 from fastapi import FastAPI, UploadFile, File
+from fastapi.middleware.cors import CORSMiddleware
 from .agents.classifier_agent import ClassifierAgent
 from .agents.json_agent import JSONAgent
 from .agents.email_agent import EmailAgent
@@ -8,6 +9,14 @@ from .memory.memory_manager import MemoryManager
 
 app = FastAPI()
 memory = MemoryManager()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.get("/")
 def home():
