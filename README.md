@@ -6,20 +6,20 @@ A combined FastAPI backend and React frontend that allows users to upload docume
 
 ## 📌 Features
 
-* **Document Classification** via Google Gemini (format + intent).
-* **JSON Extraction & Validation** (invoice\_id, amount, date).
-* **Email Parsing & Extraction** (sender, subject, urgency, details).
-* **Conversation Memory** stored in Redis (create/update/retrieve).
-* **Responsive React Frontend** using plain CSS.
+- **Document Classification** via Google Gemini (format + intent).
+- **JSON Extraction & Validation** (invoice_id, amount, date).
+- **Email Parsing & Extraction** (sender, subject, urgency, details).
+- **Conversation Memory** stored in Redis (create/update/retrieve).
+- **Responsive React Frontend** using plain CSS.
 
 ---
 
 ## 🛠 Prerequisites
 
-* **Node.js & npm** (v14+)
-* **Python 3.9+**
-* **Docker Desktop** (for Redis)
-* (Optional) **Git** for cloning/version control
+- **Node.js & npm** (v14+)
+- **Python 3.9+**
+- **Docker Desktop** (for Redis)
+- (Optional) **Git** for cloning/version control
 
 ---
 
@@ -34,13 +34,14 @@ A combined FastAPI backend and React frontend that allows users to upload docume
 
 2. **Create & activate a Python virtual environment**
 
-   * Windows (PowerShell):
+   - Windows (PowerShell):
 
      ```powershell
      python -m venv .venv
      .venv\Scripts\Activate.ps1
      ```
-   * macOS/Linux:
+
+   - macOS/Linux:
 
      ```bash
      python3 -m venv .venv
@@ -72,13 +73,14 @@ A combined FastAPI backend and React frontend that allows users to upload docume
    ```
 
 7. **Start the FastAPI server**
-   * From project root run :
+
+   - From project root run :
 
    ```bash
    uvicorn app.main:app --reload --port 8000
    ```
 
-   * Check [http://localhost:8000/](http://localhost:8000/) → should return `{"message":"API Running!"}`.
+   - Check [http://localhost:8000/](http://localhost:8000/) → should return `{"message":"API Running!"}`.
 
 ---
 
@@ -101,13 +103,13 @@ A combined FastAPI backend and React frontend that allows users to upload docume
    npm start
    ```
 
-   * The app will open at [http://localhost:3000](http://localhost:3000).
+   - The app will open at [http://localhost:3000](http://localhost:3000).
 
 ---
 
 ## 🔧 Environment Variables
 
-* **.env** (placed at project root):
+- **.env** (placed at project root):
 
   ```
   GEMINI_API_KEY=<your-gemini-api-key>
@@ -119,12 +121,13 @@ A combined FastAPI backend and React frontend that allows users to upload docume
 
 1. Activate Python virtual environment:
 
-   * Windows:
+   - Windows:
 
      ```powershell
      .venv\Scripts\Activate.ps1
      ```
-   * macOS/Linux:
+
+   - macOS/Linux:
 
      ```bash
      source .venv/bin/activate
@@ -145,7 +148,7 @@ A combined FastAPI backend and React frontend that allows users to upload docume
    Should return:
 
    ```json
-   {"message":"API Running!"}
+   { "message": "API Running!" }
    ```
 
 ---
@@ -158,16 +161,19 @@ A combined FastAPI backend and React frontend that allows users to upload docume
    ```bash
    cd frontend
    ```
+
 3. Install dependencies (if not done):
 
    ```bash
    npm install
    ```
+
 4. Start the React development server:
 
    ```bash
    npm start
    ```
+
 5. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ---
@@ -209,18 +215,18 @@ IngestIQ/
 2. **Frontend** runs on port 3000.
 3. On the React UI:
 
-   * Click “Choose File” → select a `.txt`, `.json`, or `.pdf`.
-   * Click “Upload & Process.”
-   * The right panel will display:
+   - Click “Choose File” → select a `.txt`, `.json`, or `.pdf`.
+   - Click “Upload & Process.”
+   - The right panel will display:
 
-     * **Prediction Result** (format + intent or JSON extraction output).
-     * **Memory Context** (Redis-stored entry).
+     - **Prediction Result** (format + intent or JSON extraction output).
+     - **Memory Context** (Redis-stored entry).
 
 ---
 
 ## ⚠️ Troubleshooting
 
-* **CORS Errors**
+- **CORS Errors**
   Ensure FastAPI includes:
 
   ```python
@@ -235,40 +241,41 @@ IngestIQ/
   )
   ```
 
-* **Redis Connection Refused**
+- **Redis Connection Refused**
 
-  * Verify Docker is running.
-  * Run `docker ps` to confirm `redis-local` is up.
-  * If not, start it:
+  - Verify Docker is running.
+  - Run `docker ps` to confirm `redis-local` is up.
+  - If not, start it:
 
     ```bash
     docker run -d --name redis-local -p 6379:6379 redis:7
     ```
 
-* **Missing GEMINI\_API\_KEY**
+- **Missing GEMINI_API_KEY**
 
-  * Create a `.env` file at project root with:
+  - Create a `.env` file at project root with:
 
     ```
     GEMINI_API_KEY=<your-key>
     ```
-  * Restart Uvicorn.
 
-* **Port Conflicts**
+  - Restart Uvicorn.
 
-  * React: default 3000.
-  * FastAPI: default 8000.
-  * If needed, change with `npm start` (e.g. `PORT=4000 npm start`) or Uvicorn flags (`--port 9000`).
+- **Port Conflicts**
+
+  - React: default 3000.
+  - FastAPI: default 8000.
+  - If needed, change with `npm start` (e.g. `PORT=4000 npm start`) or Uvicorn flags (`--port 9000`).
 
 ---
 
 ## 📷 Preview
 
-![App Screenshot](/docs/images/homepage.png)
-![App Screenshot](/docs/images/fileUpload.png)
-![App Screenshot](/docs/images/email_output.png)
-![App Screenshot](/docs/images/json_output.png)
-![App Screenshot](/docs/images/pdf_output.png)
+![App Screenshot](/docs/output_images/homepage.png)
+![App Screenshot](/docs/output_images/fileUpload.png)
+![App Screenshot](/docs/output_images/email_output.png)
+![App Screenshot](/docs/output_images/json_output.png)
+![App Screenshot](/docs/output_images/pdf_output.png)
 
 ---
 
@@ -281,4 +288,3 @@ IngestIQ/
 5. Open a Pull Request.
 
 ---
-
