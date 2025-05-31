@@ -175,7 +175,7 @@ A combined FastAPI backend and React frontend that allows users to upload docume
 ## 📂 Project Structure
 
 ```
-multi-agent-system/
+IngestIQ/
 ├── app/                        # FastAPI backend
 │   ├── agents/
 │   │   ├── classifier_agent.py
